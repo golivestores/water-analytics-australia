@@ -1,0 +1,34 @@
+# Exclude everything by default
+*
+
+# Then whitelist only what we need
+!.gitignore
+!.nojekyll
+!index.html
+!override.css
+!resolute-scoped.css
+!hero.mp4
+!assets/
+!assets/images/
+assets/images/*
+
+!assets/images/card-award.jpg
+!assets/images/card-benefits-new.jpg
+!assets/images/card-fhwrs-new.jpg
+!assets/images/card-impact.jpg
+!assets/images/card-importance.jpg
+!assets/images/card-unmatched.jpg
+!assets/images/distribution-model.png
+!assets/images/endors-2.png
+!assets/images/endorse-3-opt.png
+!assets/images/hero-bg.jpg
+!assets/images/how_works_enjoy_pure_water.mp4
+!assets/images/how_works_water_report.avif
+!assets/images/how_works_water_test.avif
+!assets/images/lab.jpg
+!assets/images/logo.png
+!assets/images/mission.jpg
+!assets/images/our-mission.mp4
+!assets/images/rnd.jpg
+!assets/images/water-human.png
+!assets/images/water-quality.jpg

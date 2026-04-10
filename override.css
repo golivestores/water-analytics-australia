@@ -1,0 +1,656 @@
+/* ============================================
+   Water Analytics Australia — Brand Override
+   Targets eco.com CSS variable system
+   ============================================ */
+
+/* === Slide card flip on hover (was in resolute inline style, removed during cleanup) === */
+.resolute-wrap .slide:hover .slide_content_front {
+  transform: rotateY(180deg);
+  transition-delay: 0.25s;
+}
+
+.resolute-wrap .slide:hover .slide_content_back {
+  transform: rotateY(0deg);
+  transition-delay: 0.25s;
+}
+
+/* Fix journeys slider card clipping */
+.resolute-wrap .slider-container {
+  overflow: visible !important;
+}
+
+/* Companion tab scrollbar hide */
+.resolute-wrap .companion_tab_menuWrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* === Font Override: directly target selectors with hardcoded fonts ===
+   eco.com CSS hardcodes Interdisplay/Roobert on specific selectors.
+   We override each one with !important.
+   =================================================================== */
+.body,
+.h1.max-w-950,
+.btn.u-bg-transparent,
+.btn.u-bg-darkgray,
+.p-14.u-color-white-secondary.mob-centered,
+.u-align-center.h2.scale-up,
+.u-d-block,
+.u-color-white-tertiary.p-14,
+.nav-dropdown-link.left-0,
+.nav-btn-text,
+.card-h3,
+.heading-2,
+.btn.is-play-btn {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif !important;
+}
+
+/* === Eco.com Color System Override === */
+:root {
+  /* Primary: Tiffany Blue (was #1c53bd blue) */
+  --colors-all--primary: #0ABAB5 !important;
+
+  /* Black / text (was #0f111a) */
+  --colors-all--black: #1A1A2E !important;
+  --colors-all--black-secondary: #1a1a2ea3 !important;
+
+  /* Off-whites — shift from grey to cool teal tint */
+  --colors-all--off-white: #E8F4F3 !important;
+  --colors-all--off-white-secondary: #C5E0DE99 !important;
+  --colors-all--off-white-tertiary: #C5E0DE4d !important;
+
+  /* Light blue accent → teal light */
+  --colors-all--light-blue: #7DD8D5 !important;
+  --colors-all--light-purple: #B2EBE8 !important;
+
+  /* Grey → subtle teal */
+  --colors-all--grey: #0ABAB51a !important;
+
+  /* Dark gray */
+  --colors-all--dark-gray: #0A3D3B !important;
+  --colors-all--mid-gray: #089490 !important;
+
+  /* Page wrapper */
+  --colors-page-wrapper--background: #FAFFFE !important;
+  --colors-page-wrapper--text: #1A1A2E !important;
+
+  /* Typography — Plus Jakarta Sans + Inter (was Roobert + Aeonik Mono) */
+  --type-all-fonts--sans-serif: "Plus Jakarta Sans", "Inter", sans-serif !important;
+  --type-all-fonts--monospace: "Inter", "Plus Jakarta Sans", sans-serif !important;
+
+  /* Keep brand-primary for resolute sections that use it */
+  --brand-primary: #0ABAB5;
+}
+
+/* === Ensure font override reaches all eco elements === */
+body,
+.body,
+p,
+.p-20,
+.p-14,
+.btn,
+.eyebrow,
+.text-span,
+[class*="paragraph-"],
+[class*="text-size-"] {
+  font-family: "Inter", "Plus Jakarta Sans", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4,
+[class*="heading-style-"],
+.hero-h1,
+.hero-title {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif !important;
+}
+
+/* === Primary button — solid Tiffany Blue === */
+.btn .btn_gradient,
+.button-gradient {
+  background: #0ABAB5 !important;
+}
+
+.btn:hover .btn_gradient,
+.button:not(.is-nav):not(.is-secondary):hover .button-gradient,
+.button-form:hover .button-gradient {
+  box-shadow: 0 4px 20px rgba(10, 186, 181, 0.35) !important;
+}
+
+/* === Glassmorphism Buttons (Secondary/Ghost) === */
+.button.is-nav,
+.button.is-secondary {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.35) !important;
+  transition: all 0.3s ease !important;
+}
+
+.button.is-nav:hover,
+.button.is-secondary:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(10, 186, 181, 0.6) !important;
+  box-shadow: 0 0 20px rgba(10, 186, 181, 0.15) !important;
+}
+
+/* === Form input focus ring === */
+.banner_form-wrapper:has(input:focus) {
+  outline-color: #0ABAB5 !important;
+}
+
+.form_input:focus {
+  border-color: #0ABAB5 !important;
+}
+
+/* === Tab progress bar — Tiffany gradient === */
+.lottie_tab.w--current .lottie_tab-border {
+  background: conic-gradient(
+    #0ABAB5,
+    #7DD8D5,
+    #0ABAB5,
+    #089490,
+    #0ABAB5
+  ) !important;
+}
+
+/* === Dark sections — deep charcoal background === */
+.section_rethink {
+  background: #0F1923 !important;
+}
+
+.section_cta {
+  background: #0F1923 !important;
+}
+
+/* === About section endorsement bar === */
+.waa-endorse-wrap {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  opacity: 0.95;
+}
+.waa-endorse-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6B7280;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+.waa-endorse-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  max-width: 100%;
+}
+.waa-endorse-img {
+  height: 64px;
+  width: auto;
+  max-width: 90vw;
+  display: block;
+  filter: none;
+  transition: transform 0.4s ease;
+}
+.waa-endorse-img-tall {
+  height: 90px;
+}
+.waa-endorse-img:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 991px) {
+  .waa-endorse-wrap { margin-top: 60px; gap: 22px; }
+  .waa-endorse-images { gap: 32px; }
+  .waa-endorse-img { height: 48px; }
+}
+@media (max-width: 575px) {
+  .waa-endorse-wrap { margin-top: 40px; }
+  .waa-endorse-images { gap: 20px; flex-direction: column; }
+  .waa-endorse-img { height: 40px; }
+}
+
+/* === Nav logo: white on hero (dark bg), black on scrolled white bg === */
+.nav:not(.nav-active) .brandlogo-img {
+  filter: brightness(0) invert(1) !important;
+}
+.nav.nav-active .brandlogo-img {
+  filter: brightness(0) !important;
+}
+/* Darken nav text on white sections — must override eco's filter:invert(1) */
+.nav.nav-active .text-nav-white,
+.nav.nav-active .nav-btn-text,
+.nav.nav-active .nav-dropdown-link,
+body.is-scrolled .nav .text-nav-white,
+body.is-scrolled .nav .nav-btn-text,
+body.is-scrolled .nav .nav-dropdown-link {
+  color: #1A1A2E !important;
+  filter: none !important;
+  -webkit-text-fill-color: #1A1A2E !important;
+}
+.nav.nav-active .nav-dropdown-icon,
+body.is-scrolled .nav .nav-dropdown-icon {
+  filter: brightness(0) !important;
+}
+/* Nav menu burger icon on white */
+.nav.nav-active .menu-button,
+body.is-scrolled .nav .menu-button {
+  filter: brightness(0) !important;
+}
+
+/* === Force hero text visible after load animation === */
+.home_hero .h1-xl,
+.home_hero [load-item],
+.home_hero .subheading-wrap,
+.home_hero .hero-p {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* === Arc transition — concave dip via elliptical mask (reference style) === */
+.resolute-wrap .faq_section {
+  position: relative !important;
+  padding-top: 80px !important;
+  padding-bottom: 280px !important;
+  overflow: hidden;
+}
+.resolute-wrap .faq_section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  background: #0F1923;
+  pointer-events: none;
+  z-index: 0;
+  /* Elliptical "hole" centered at top. Inside = transparent (white shows through),
+     outside = dark. This creates a concave dip: sides rise up, middle is cut away. */
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 65% at 50% 0%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.3) 78%,
+    rgba(0, 0, 0, 0.7) 88%,
+    rgba(0, 0, 0, 0.95) 96%,
+    #000 100%
+  );
+          mask-image: radial-gradient(
+    ellipse 75% 65% at 50% 0%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.3) 78%,
+    rgba(0, 0, 0, 0.7) 88%,
+    rgba(0, 0, 0, 0.95) 96%,
+    #000 100%
+  );
+}
+/* Make sure FAQ content sits above the arc */
+.resolute-wrap .faq_section .faq_contain,
+.resolute-wrap .faq_section .faq_layout,
+.resolute-wrap .faq_section .faq_left_wrap,
+.resolute-wrap .faq_section .faq_right_wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Fix footer CTA text line-height === */
+.footer .h2.scale-up {
+  line-height: 1.15 !important;
+}
+
+/* === Fix footer buttons layout === */
+.footer .btn-wrap .btn {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* === Testimonial title white text === */
+.resolute-wrap .testimonial_title {
+  color: #ffffff !important;
+}
+
+/* === Remove bottom border on last FAQ item === */
+.resolute-wrap .fg-dropdown:last-child {
+  border-bottom: none !important;
+}
+.resolute-wrap .fg-dropdown:last-child .fg-dropdown_toggle {
+  border-bottom: none !important;
+}
+
+/* === Smooth scroll + full width fix === */
+html {
+  scroll-behavior: smooth;
+}
+html, body, .page-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: clip !important;
+}
+
+/* === Hide "Read All FAQs" button === */
+.faq_btn_wrap {
+  display: none !important;
+}
+
+/* === Hero future-component gradient — recolor from blue to teal === */
+.home-hero_future-component .image {
+  filter: hue-rotate(160deg) saturate(0.7) brightness(0.85);
+}
+
+/* === Steps section background === */
+.section_steps {
+  background-color: #E8F4F3 !important;
+}
+
+.steps_bg-gradient {
+  filter: hue-rotate(160deg) saturate(0.6) brightness(0.9);
+}
+
+/* === Shrink hero future-component height === */
+.home-hero_future-component {
+  margin-top: -60% !important;
+}
+
+.future_contnet-wrappper {
+  margin-bottom: 10% !important;
+}
+
+/* === Horizontal scroll section === */
+.section_horizontal-scroll {
+  position: relative;
+  z-index: 6;
+  background: #E0F5F4 !important;
+}
+
+.hscroll-card {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Mobile: stack vertically */
+@media screen and (max-width: 767px) {
+  .horizontal-scroll_sticky {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+  }
+  .horizontal-scroll_track {
+    flex-direction: column !important;
+    padding: 2rem 1rem !important;
+  }
+  .hscroll-card {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 70vh;
+    flex-direction: column !important;
+  }
+  .hscroll-card > div:first-child {
+    padding: 2rem !important;
+  }
+  .hscroll-card > div:last-child {
+    min-height: 250px;
+  }
+}
+
+/* === Selection color === */
+::selection {
+  background-color: #0ABAB5 !important;
+  color: white !important;
+}
+
+/* === Links accent color === */
+a:not(.btn):not(.button):not(.w-inline-block):hover {
+  color: #0ABAB5 !important;
+}
+
+/* === Team section marquee scroll animation === */
+@keyframes team-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.resolute-wrap .team_collection_wrap {
+  display: flex !important;
+  animation: team-scroll 20s linear infinite !important;
+}
+.resolute-wrap .team_content_wrap {
+  overflow: hidden !important;
+}
+
+/* === Journeys marquee scroll animation === */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.resolute-wrap .journey_marquee.text-scroll {
+  animation: marquee-scroll 15s linear infinite !important;
+}
+
+/* === Cards (build-with-eco) === */
+.build-with-eco .content-box {
+  min-height: 480px !important;
+}
+.build-with-eco .content-wrap.big-gap {
+  grid-row-gap: 480px !important;
+  row-gap: 480px !important;
+}
+.build-with-eco .bwe-img img,
+.build-with-eco .bwe-img video {
+  border-radius: 8px !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============================================
+   Resolute Section Background Overrides
+   Original resolute colors → WAA color scheme
+   ============================================= */
+
+/* C-features: rgb(214,111,80) terracotta → dark charcoal */
+.resolute-wrap .features_wrap,
+.resolute-wrap .features_wrap.u-theme-dark {
+  background-color: #0F1923 !important;
+}
+
+/* D-about: white is fine, keep it */
+
+/* E-journeys: rgb(243,239,233) warm beige → cool light teal */
+.resolute-wrap .journeys_wrap {
+  background-color: #E8F4F3 !important;
+}
+
+/* F-how_works: rgb(66,11,32) maroon → dark charcoal */
+.resolute-wrap .how_works_wrap,
+.resolute-wrap .how_works_wrap.u-theme-dark {
+  background-color: #0F1923 !important;
+}
+
+/* H-testimonial: dark background for contrast */
+.resolute-wrap .testimonial_wrap {
+  background-color: #0F1923 !important;
+  --_color-mode---text--primary: #E8F4F3 !important;
+}
+
+/* I-team: keep white */
+
+/* J-health: keep white */
+
+/* K-faq: keep white */
+
+/* Eco dark sections: pure black → charcoal */
+.products.section {
+  background-color: #0F1923 !important;
+}
+.section.u-z-index-4.mt-3 {
+  background-color: #0F1923 !important;
+}
+
+/* === Resolute theme color variables override === */
+.resolute-wrap .u-theme-dark {
+  --_color-mode---background--primary: #0F1923 !important;
+  --_color-mode---text--primary: #E8F4F3 !important;
+}
+
+.resolute-wrap .u-theme-light {
+  --_color-mode---background--primary: #FAFFFE !important;
+}
+
+/* === Features pointer icons — reposition closer to image === */
+.resolute-wrap .feature_pointer_wrap.u-flex-horizontal-wrap.feature_1 {
+  right: 0% !important;
+  top: 18% !important;
+}
+.resolute-wrap .feature_pointer_wrap.u-flex-horizontal-wrap.feature_2 {
+  position: absolute !important;
+  width: auto !important;
+  white-space: nowrap !important;
+  bottom: 15% !important;
+  left: -8% !important;
+  top: auto !important;
+  inset: auto auto 15% -8% !important;
+}
+.resolute-wrap .feature_pointer_wrap.u-flex-horizontal-wrap.feature_3 {
+  right: 5% !important;
+  bottom: 28% !important;
+}
+
+/* === Features image gradient — replace orange with dark bg === */
+.resolute-wrap .features_img_gradient {
+  background-image: linear-gradient(180deg, transparent, #0F1923 75%) !important;
+}
+
+/* === Resolute accent colors override (orange/maroon → teal) === */
+.resolute-wrap .is-primary-font {
+  color: #0ABAB5 !important;
+}
+
+/* Rethink heading — white instead of teal-on-brown */
+.section_rethink .heading-style-h2.is-orange {
+  color: #fff !important;
+}
+
+/* Rethink past pills — muted style */
+.rethink_pill-past {
+  border-color: rgba(255,255,255,0.2) !important;
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* Rethink future pills — teal accent */
+.rethink_pill.is-future {
+  border-color: #0ABAB5 !important;
+  color: #0ABAB5 !important;
+  background: rgba(10, 186, 181, 0.1) !important;
+}
+
+/* Rethink center glow — recolor */
+.section_rethink .rethink_gradient {
+  filter: hue-rotate(160deg) saturate(0.5) brightness(0.7) !important;
+}
+
+/* === How Works — video takes same slot as img === */
+.resolute-wrap video.works_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === Journey cards — smaller heading + dark overlay for legibility === */
+.resolute-wrap .slide_content_front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0.35) 60%,
+    rgba(0,0,0,0.78) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+.resolute-wrap .slide_header_wrap {
+  z-index: 2 !important;
+  width: 88% !important;
+  inset: auto 6% 7% 6% !important;
+  transform: none !important;
+  text-align: center;
+}
+.resolute-wrap .slide_title_wrap {
+  align-items: center !important;
+}
+.resolute-wrap .journey_slide_heading,
+.resolute-wrap .journey_slide_heading.u-text-style-h3 {
+  font-size: 1.05rem !important;
+  line-height: 1.18 !important;
+  white-space: normal !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+  font-weight: 600 !important;
+}
+.resolute-wrap .journey_slide_tagline {
+  font-size: 0.7rem !important;
+  line-height: 1.35 !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  color: rgba(255,255,255,0.82) !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  margin-top: 0.25rem;
+}
+.resolute-wrap .slide_icon_wrap {
+  margin: 0.6rem auto 0 !important;
+}
+@media (min-width: 992px) {
+  .resolute-wrap .journey_slide_heading,
+  .resolute-wrap .journey_slide_heading.u-text-style-h3 {
+    font-size: 1.2rem !important;
+  }
+  .resolute-wrap .journey_slide_tagline {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* === Testimonial cards — 4 distinct shades in Tiffany/teal family === */
+.resolute-wrap .testimonial_card {
+  background: linear-gradient(145deg, #0F4D49 0%, #0A3A37 100%) !important;
+  border: 1px solid rgba(10, 186, 181, 0.18) !important;
+  color: #E8F4F3 !important;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(10, 186, 181, 0.05) inset !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.resolute-wrap .testimonial_card.is-testimonial-blue {
+  background: linear-gradient(145deg, #176863 0%, #0D4B47 100%) !important;
+  border-color: rgba(125, 216, 213, 0.22) !important;
+}
+
+.resolute-wrap .testimonial_card.is-testimonial-orange {
+  background: linear-gradient(145deg, #208578 0%, #135E54 100%) !important;
+  border-color: rgba(10, 186, 181, 0.3) !important;
+  box-shadow:
+    0 12px 48px rgba(10, 186, 181, 0.15),
+    0 0 0 1px rgba(10, 186, 181, 0.08) inset !important;
+}
+
+.resolute-wrap .testimonial_card.istestimonial-maroon {
+  background: linear-gradient(145deg, #093E3B 0%, #052826 100%) !important;
+  border-color: rgba(125, 216, 213, 0.12) !important;
+}
+
+.resolute-wrap .testimonial_card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 60px rgba(10, 186, 181, 0.22),
+    0 0 0 1px rgba(10, 186, 181, 0.25) inset !important;
+}
+
