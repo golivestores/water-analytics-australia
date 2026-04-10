@@ -239,6 +239,20 @@ body.is-scrolled .nav .menu-button {
   filter: brightness(0) !important;
 }
 
+/* === Force hero section to fixed height — prevents layout shift when video loads,
+       which is what causes ScrollTrigger to cache wrong start/end positions === */
+.home_hero,
+.home_hero.section {
+  min-height: 100vh !important;
+  height: 100vh !important;
+}
+.home_hero .video-background,
+.home_hero-globe video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
 /* === Force hero text visible after load animation === */
 .home_hero .h1-xl,
 .home_hero [load-item],
